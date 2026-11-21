@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Signed in · The Built Where</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="logo.png" alt="The Built Where logo"></a>
+    <h1>Signed <span>in</span></h1>
+  </header>
+  <p class="lead" id="msg">TBW Publisher received the sign-in. You can close this tab.</p>
+  <script>
+    var q = new URLSearchParams(location.search);
+    if (q.get("error")) {
+      document.getElementById("msg").textContent = "Sign-in was not completed: " + q.get("error");
+    }
+  </script>
+</main>
+</body>
+</html>
